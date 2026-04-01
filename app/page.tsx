@@ -49,15 +49,15 @@ export default function Home() {
       <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
-          <h1 className="font-bold text-lg text-green-600">RohingyaEdu</h1>
+          <a href="/" className="font-bold text-lg text-green-600">RohingyaEdu</a>
 
           {/* DESKTOP */}
           <div className="hidden md:flex gap-6 items-center">
-            <a href="#about" className="flex items-center gap-1 hover:text-green-600 transition">
+            <a href="/about" className="flex items-center gap-1 hover:text-green-600 transition">
               <FaUserGraduate /> About
             </a>
-            <a href="#stories" className="flex items-center gap-1 hover:text-green-600 transition">
-              <FaBookOpen /> Students
+            <a href="/impact" className="flex items-center gap-1 hover:text-green-600 transition">
+              <FaBookOpen /> Impact
             </a>
             <motion.button
               whileHover={{ scale: 1.05 }}
