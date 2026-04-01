@@ -160,23 +160,23 @@ export default function Home() {
         viewport={{ once: true }}
       >
         {[
-  { value: 200, suffix: "+", label: "Students Supported" },
-  { value: 15000, prefix: "$", suffix: "+", label: "Donations Raised" },
-  { value: 150, suffix: "+", label: "Active Donors" },].map((item, i) => (
-          <motion.div
-            key={i}
-            variants={fadeInUp}
-            whileHover={{ scale: 1.05, y: -5 }}
-            className="bg-white p-6 rounded-2xl shadow transition"
-          >
-            <h2 className="text-3xl font-bold text-green-600">
-  {item.prefix}
-  <Counter value={item.value} />
-  {item.suffix}
-</h2>
-            <p className="text-gray-600 mt-2">{item.label}</p>
-          </motion.div>
-        ))}
+          { value: 200, suffix: "+", label: "Students Supported" },
+          { value: 15000, prefix: "$", suffix: "+", label: "Donations Raised" },
+          { value: 150, suffix: "+", label: "Active Donors" },].map((item, i) => (
+            <motion.div
+              key={i}
+              variants={fadeInUp}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="bg-white p-6 rounded-2xl shadow transition"
+            >
+              <h2 className="text-3xl font-bold text-green-600">
+                {item.prefix}
+                <Counter value={item.value} />
+                {item.suffix}
+              </h2>
+              <p className="text-gray-600 mt-2">{item.label}</p>
+            </motion.div>
+          ))}
       </motion.section>
 
       {/* BACKGROUND IMMERSIVE FULL-WIDTH */}
