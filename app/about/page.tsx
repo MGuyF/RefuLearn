@@ -50,11 +50,11 @@ export default function AboutPage() {
 
                 {isOpen && (
                     <div className="md:hidden bg-white shadow-lg px-6 py-6 space-y-4">
-                        <a href="#about" className="flex items-center gap-2">
+                        <a href="/about" className="flex items-center gap-2">
                             <FaUserGraduate /> About
                         </a>
-                        <a href="#stories" className="flex items-center gap-2">
-                            <FaBookOpen /> Students
+                        <a href="/impact" className="flex items-center gap-2">
+                            <FaBookOpen /> Impact
                         </a>
                         <button className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-5 py-3 rounded-xl">
                             <FaDonate /> Donate
@@ -107,13 +107,11 @@ export default function AboutPage() {
                             {
                                 title: "Our Mission",
                                 text: "Provide access to education and resources for Rohingya students, enabling them to achieve their full potential.",
-                                image: "/mission-bg.jpg",
                                 alt: "Mission background"
                             },
                             {
                                 title: "Our Vision",
                                 text: "To create a world where every Rohingya child has the opportunity to learn, grow, and contribute positively to their community.",
-                                image: "/vision-bg.jpg",
                                 alt: "Vision background"
                             }
                         ].map((item, i) => (
@@ -126,7 +124,6 @@ export default function AboutPage() {
                                 {/* Background image (covers entire card) */}
                                 <div
                                     className="absolute inset-0 bg-cover bg-center transition-opacity duration-300"
-                                    style={{ backgroundImage: `url(${item.image})` }}
                                     aria-hidden
                                 />
 

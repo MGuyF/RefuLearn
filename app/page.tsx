@@ -79,11 +79,11 @@ export default function Home() {
         {/* MOBILE MENU */}
         {isOpen && (
           <div className="md:hidden bg-white shadow-lg px-6 py-6 space-y-4">
-            <a href="#about" className="flex items-center gap-2">
+            <a href="/about" className="flex items-center gap-2">
               <FaUserGraduate /> About
             </a>
-            <a href="#stories" className="flex items-center gap-2">
-              <FaBookOpen /> Students
+            <a href="/impact" className="flex items-center gap-2">
+              <FaBookOpen /> Impact
             </a>
             <button className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-5 py-3 rounded-xl">
               <FaDonate /> Donate
