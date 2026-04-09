@@ -1,11 +1,13 @@
 "use client"
 import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
-import { FaUserGraduate, FaBookOpen, FaDonate } from "react-icons/fa";
+import { FaUserGraduate, FaBookOpen, FaDonate, FaUsers, FaEnvelope } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
-import { Heart, ShieldCheck, Globe } from "lucide-react"
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
-import { useRef } from "react"
+import { Heart, ShieldCheck, Globe } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { useRef } from "react";
+import Link from "next/link";
+import { useNavigate } from "@/utils/useNavigate";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -39,6 +41,7 @@ function Counter({ value }: { value: number }) {
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
+  const { goTo } = useNavigate()
 
   return (
     <main className="bg-gray-50 text-gray-900">
@@ -46,20 +49,30 @@ export default function Home() {
       {/* NAVBAR */}
 
 
+      {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
-          <a href="/" className="font-bold text-lg text-green-600">RefuLearn</a>
+          <Link href="/" className="font-bold text-lg text-green-600">
+            RefuLearn
+          </Link>
 
           {/* DESKTOP */}
           <div className="hidden md:flex gap-6 items-center">
-            <a href="/about" className="flex items-center gap-1 hover:text-green-600 transition">
+            <Link href="/about" className="flex items-center gap-1 hover:text-green-600">
               <FaUserGraduate /> About
-            </a>
-            <a href="/impact" className="flex items-center gap-1 hover:text-green-600 transition">
+            </Link>
+            <Link href="/impact" className="flex items-center gap-1 hover:text-green-600">
               <FaBookOpen /> Impact
-            </a>
+            </Link>
+            <Link href="/students" className="flex items-center gap-1 hover:text-green-600">
+              <FaUsers /> Students
+            </Link>
+            <Link href="/contact" className="flex items-center gap-1 hover:text-green-600">
+              <FaEnvelope /> Contact
+            </Link>
             <motion.button
+              onClick={() => goTo("/donate")}
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-5 py-2 rounded-xl shadow"
             >
@@ -68,10 +81,7 @@ export default function Home() {
           </div>
 
           {/* MOBILE BUTTON */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
+          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X /> : <Menu />}
           </button>
         </div>
@@ -79,13 +89,19 @@ export default function Home() {
         {/* MOBILE MENU */}
         {isOpen && (
           <div className="md:hidden bg-white shadow-lg px-6 py-6 space-y-4">
-            <a href="/about" className="flex items-center gap-2">
+            <Link href="/about" className="flex items-center gap-2">
               <FaUserGraduate /> About
-            </a>
-            <a href="/impact" className="flex items-center gap-2">
+            </Link>
+            <Link href="/impact" className="flex items-center gap-2">
               <FaBookOpen /> Impact
-            </a>
-            <button className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-5 py-3 rounded-xl">
+            </Link>
+            <Link href="/students" className="flex items-center gap-2">
+              <FaUsers /> Students
+            </Link>
+            <Link href="/contact" className="flex items-center gap-2">
+              <FaEnvelope /> Contact
+            </Link>
+            <button onClick={() => goTo("/donate")} className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-5 py-3 rounded-xl">
               <FaDonate /> Support a Student
             </button>
           </div>
@@ -127,12 +143,14 @@ export default function Home() {
 
           <div className="mt-6 flex gap-4">
             <motion.button
+              onClick={() => goTo("/donate")}
               whileHover={{ scale: 1.05 }}
               className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-xl shadow"
             >
               Support a Student
             </motion.button>
             <motion.button
+              onClick={() => goTo("/donate")}
               whileHover={{ scale: 1.05, backgroundColor: '#f3f4f6' }}
               className="border px-6 py-3 rounded-xl"
             >
@@ -222,9 +240,9 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { name: "Amina, 19", gender: "female", course: "nursing" },
-            { name: "Rashid, 21", gender: "male", course: "engineering" },
-            { name: "Amir, 18", gender: "male", course: "education" },
+            { id: "amina", name: "Amina, 19", gender: "female", course: "nursing" },
+            { id: "rashid", name: "Rashid, 21", gender: "male", course: "engineering" },
+            { id: "amir", name: "Amir, 18", gender: "male", course: "education" },
           ].map((student, i) => (
             <motion.div
               key={i}
@@ -243,6 +261,7 @@ export default function Home() {
                   Studying {student.course} thanks to donor support.
                 </p>
                 <motion.button
+                  onClick={() => goTo(`/students/${student.id}`)}
                   whileHover={{ scale: 1.05, color: '#16a34a' }}
                   className="mt-4 font-medium"
                 >
@@ -343,10 +362,11 @@ export default function Home() {
           </p>
 
           <motion.button
+            onClick={() => goTo("/donate")}
             whileHover={{ scale: 1.05 }}
             className="mt-6 bg-white text-green-600 px-6 py-3 rounded-xl font-semibold"
           >
-             Support a Student
+            Support a Student
           </motion.button>
         </div>
       </motion.section>

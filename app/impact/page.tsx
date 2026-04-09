@@ -1,7 +1,8 @@
 "use client"
 
-import { motion, AnimatePresence } from "framer-motion"
-import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import Link from "next/link"
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -47,13 +48,15 @@ export default function ImpactPage() {
 
                 {/* NAV MINI */}
                 <div className="-mt-12 flex justify-between items-center">
-                    <a href="/" className="font-bold text-lg text-green-600">RefuLearn</a>
-                    <a
+                    <Link href="/" className="font-bold text-lg text-green-600">
+                        RefuLearn
+                    </Link>
+                    <Link
                         href="/donate"
                         className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-xl shadow hover:scale-105 transition"
                     >
                         Support a Student
-                    </a>
+                    </Link>
                 </div>
 
                 {/* TITLE */}
@@ -113,12 +116,12 @@ export default function ImpactPage() {
                         We ensure that every donation is used effectively to maximize educational impact.
                     </p>
                     <div className="mt-8 flex justify-center">
-                        <a
+                        <Link
                             href="/donate"
                             className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-xl shadow hover:scale-105 transition"
                         >
                             Support the Mission
-                        </a>
+                        </Link>
                     </div>
                 </motion.div>
 

@@ -1,9 +1,10 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { FaDonate } from "react-icons/fa"
-import { Heart, ShieldCheck, Globe } from "lucide-react"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Heart, ShieldCheck, Globe } from "lucide-react";
+import Link from "next/link"
+import { useNavigate } from "../../utils/useNavigate";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -14,6 +15,7 @@ export default function DonatePage() {
     const [amount, setAmount] = useState(25)
     const [customAmount, setCustomAmount] = useState("")
     const [frequency, setFrequency] = useState("one-time")
+    const { goTo } = useNavigate()
 
     const presetAmounts = [10, 25, 50, 100]
 
@@ -27,6 +29,7 @@ export default function DonatePage() {
         const finalAmount = customAmount ? parseInt(customAmount) : amount
         alert(`Thanks for donating $${finalAmount} (${frequency})!`)
         // Ici tu peux intégrer Stripe / PayPal
+        goTo("/thank-you")
     }
 
     return (
@@ -53,12 +56,12 @@ export default function DonatePage() {
 
                 {/* Back to Home */}
                 <div className="-mt-12 flex justify-start">
-                    <a
+                    <Link
                         href="/"
                         className="font-bold text-lg text-green-600"
                     >
                         RefuLearn
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Donate Card */}

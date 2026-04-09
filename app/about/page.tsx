@@ -1,9 +1,11 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { FaUserGraduate, FaBookOpen, FaDonate, FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa"
-import { Menu, X } from "lucide-react"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { FaUserGraduate, FaBookOpen, FaDonate, FaFacebookF, FaTwitter, FaLinkedinIn, FaUsers, FaEnvelope } from "react-icons/fa";
+import { Menu, X } from "lucide-react";
+import Link from "next/link"
+import { useNavigate } from "../../utils/useNavigate";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -17,24 +19,35 @@ const staggerContainer = {
 
 export default function AboutPage() {
     const [isOpen, setIsOpen] = useState(false)
+    const { goTo } = useNavigate()
 
     return (
         <main className="bg-gray-50 text-gray-900">
 
-            {/* NAVBAR - identique à Home */}
+            {/* NAVBAR */}
             <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
                 <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-                    <a href="/" className="font-bold text-lg text-green-600">RefuLearn</a>
+
+                    <Link href="/" className="font-bold text-lg text-green-600">
+                        RefuLearn
+                    </Link>
 
                     {/* DESKTOP */}
                     <div className="hidden md:flex gap-6 items-center">
-                        <a href="/about" className="flex items-center gap-1 hover:text-green-600 transition">
+                        <Link href="/about" className="flex items-center gap-1 hover:text-green-600">
                             <FaUserGraduate /> About
-                        </a>
-                        <a href="/impact" className="flex items-center gap-1 hover:text-green-600 transition">
+                        </Link>
+                        <Link href="/impact" className="flex items-center gap-1 hover:text-green-600">
                             <FaBookOpen /> Impact
-                        </a>
+                        </Link>
+                        <Link href="/students" className="flex items-center gap-1 hover:text-green-600">
+                            <FaUsers /> Students
+                        </Link>
+                        <Link href="/contact" className="flex items-center gap-1 hover:text-green-600">
+                            <FaEnvelope /> Contact
+                        </Link>
                         <motion.button
+                            onClick={() => goTo("/donate")}
                             whileHover={{ scale: 1.05 }}
                             className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-5 py-2 rounded-xl shadow"
                         >
@@ -42,21 +55,28 @@ export default function AboutPage() {
                         </motion.button>
                     </div>
 
-                    {/* MOBILE */}
+                    {/* MOBILE BUTTON */}
                     <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
                         {isOpen ? <X /> : <Menu />}
                     </button>
                 </div>
 
+                {/* MOBILE MENU */}
                 {isOpen && (
                     <div className="md:hidden bg-white shadow-lg px-6 py-6 space-y-4">
-                        <a href="/about" className="flex items-center gap-2">
+                        <Link href="/about" className="flex items-center gap-2">
                             <FaUserGraduate /> About
-                        </a>
-                        <a href="/impact" className="flex items-center gap-2">
+                        </Link>
+                        <Link href="/impact" className="flex items-center gap-2">
                             <FaBookOpen /> Impact
-                        </a>
-                        <button className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-5 py-3 rounded-xl">
+                        </Link>
+                        <Link href="/students" className="flex items-center gap-2">
+                            <FaUsers /> Students
+                        </Link>
+                        <Link href="/contact" className="flex items-center gap-2">
+                            <FaEnvelope /> Contact
+                        </Link>
+                        <button onClick={() => goTo("/donate")} className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-5 py-3 rounded-xl">
                             <FaDonate /> Support a Student
                         </button>
                     </div>
@@ -195,11 +215,11 @@ export default function AboutPage() {
                                 {/* Réseaux sociaux */}
                                 <div className="flex justify-center gap-4 mt-3">
                                     {member.socials.map((social, idx) => (
-                                        <a key={idx} href="#" className="text-gray-600 hover:text-green-600 transition">
+                                        <Link key={idx} href="#" className="text-gray-600 hover:text-green-600 transition">
                                             {social === "facebook" && <FaFacebookF />}
                                             {social === "twitter" && <FaTwitter />}
                                             {social === "linkedin" && <FaLinkedinIn />}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                             </div>
@@ -210,7 +230,7 @@ export default function AboutPage() {
 
             {/* FINAL CTA */}
             <motion.section
-                className="relative bg-gradient-to-r from-green-500 to-emerald-600 text-white text-center py-40 px-6 rounded-3xl overflow-hidden"
+                className="relative bg-gradient-to-r from-green-500 to-emerald-600 text-white text-center py-40 px-6 overflow-hidden"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -222,6 +242,7 @@ export default function AboutPage() {
                         Your support helps RefuLearn students achieve their dreams and build a brighter future.
                     </p>
                     <motion.button
+                        onClick={() => goTo("/donate")}
                         whileHover={{ scale: 1.05, backgroundColor: '#ffffff', color: '#16a34a' }}
                         className="bg-white text-green-600 px-6 py-3 rounded-xl font-semibold shadow-lg transition-colors"
                     >
