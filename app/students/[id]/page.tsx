@@ -8,7 +8,7 @@ const students = [
     age: 19,
     course: "Nursing",
     story: "Amina grew up in a refugee camp with limited access to education. Thanks to donor support, she is now studying nursing and dreams of helping her community.",
-    image: "/students/female-1.png"
+    image: "/students/female-1.webpp"
   },
   {
     id: "rashid",
@@ -16,7 +16,7 @@ const students = [
     age: 21,
     course: "Engineering",
     story: "Rashid always had a passion for building things. With support, he is now pursuing engineering and hopes to rebuild infrastructure in his community.",
-    image: "/students/male-2.png"
+    image: "/students/male-2.webppp"
   },
   {
     id: "amir",
@@ -24,7 +24,7 @@ const students = [
     age: 18,
     course: "Education",
     story: "Amir wants to become a teacher to give back. Education changed his life, and he wants to pass that opportunity to others.",
-    image: "/students/male-3.png"
+    image: "/students/male-3.webp"
   }
 ]
 

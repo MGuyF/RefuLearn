@@ -37,7 +37,7 @@ export default function DonatePage() {
 
             {/* Background Image */}
             <img
-                src="/donate-bg.png"
+                src="/donate-bg.webp"
                 alt="Students background"
                 className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
             />

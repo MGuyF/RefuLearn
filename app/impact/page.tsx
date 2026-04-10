@@ -14,17 +14,17 @@ const categories = [
     {
         title: "Education",
         description: "Access to learning opportunities for RefuLearn students.",
-        images: ["/impact/impact-1.png", "/impact/impact-2.png", "/impact/impact-3.png"]
+        images: ["/impact/impact-1.webp", "/impact/impact-2.webp", "/impact/impact-3.webp"]
     },
     {
         title: "Learning Centers",
         description: "Safe spaces built for studying and growth.",
-        images: ["/impact/impact-1.png", "/impact/impact-4.png", "/impact/impact-3.png"]
+        images: ["/impact/impact-1.webp", "/impact/impact-4.webp", "/impact/impact-3.webp"]
     },
     {
         title: "School Supplies",
         description: "Providing essential materials to students.",
-        images: ["/impact/impact-1.png", "/impact/impact-2.png", "/impact/impact-4.png"]
+        images: ["/impact/impact-1.webp", "/impact/impact-2.webp", "/impact/impact-4.webp"]
     }
 ]
 
@@ -36,7 +36,7 @@ export default function ImpactPage() {
 
             {/* BACKGROUND */}
             <img
-                src="/donate-bg.png"
+                src="/donate-bg.webp"
                 alt="Impact background"
                 className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
             />

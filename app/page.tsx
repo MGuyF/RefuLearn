@@ -150,7 +150,7 @@ export default function Home() {
               Support a Student
             </motion.button>
             <motion.button
-              onClick={() => goTo("/donate")}
+              onClick={() => goTo("/about")}
               whileHover={{ scale: 1.05, backgroundColor: '#f3f4f6' }}
               className="border px-6 py-3 rounded-xl"
             >
@@ -166,7 +166,7 @@ export default function Home() {
         </motion.div>
 
         <motion.img
-          src="/student.png"
+          src="/student.webp"
           alt="Student"
           className="rounded-2xl shadow-lg"
           whileHover={{ scale: 1.03, rotate: 1 }}
@@ -211,7 +211,7 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <img
-          src="/students-bg.png"
+          src="/students-bg.webp"
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -251,7 +251,7 @@ export default function Home() {
               className="bg-white rounded-2xl shadow overflow-hidden"
             >
               <img
-                src={`/students/${student.gender}-${i + 1}.png`}
+                src={`/students/${student.gender}-${i + 1}.webp`}
                 alt={student.name}
                 className="h-48 w-full object-cover"
               />
@@ -348,7 +348,7 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <img
-          src="/student-cta.png"
+          src="/student-cta.webp"
           alt=""
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         />

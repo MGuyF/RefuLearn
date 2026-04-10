@@ -96,7 +96,7 @@ export default function ContactPage() {
 
             {/* BACKGROUND */}
             <img
-                src="/contact-bg.png"
+                src="/students-bg.webp"
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover opacity-20"
             />
@@ -226,7 +226,7 @@ export default function ContactPage() {
             </div>
 
             {/* FOOTER */}
-            <footer className="bg-white text-center py-8 text-gray-900 text-sm">
+            <footer className="bg-white text-center py-8 text-gray-500 text-sm">
                 © 2026 Rohingya Education Support — All rights reserved
             </footer>
 

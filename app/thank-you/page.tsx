@@ -10,7 +10,7 @@ export default function ThankYouPage() {
 
       {/* BACKGROUND IMAGE */}
       <img
-        src="/thankyou-bg.png"
+        src="/thankyou-bg.webp"
         alt=""
         className="absolute inset-0 w-full h-full object-cover scale-110"
       />

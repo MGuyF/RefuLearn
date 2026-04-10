@@ -25,7 +25,7 @@ export default function StudentClient({ student }: { student: Student }) {
 
       {/* BACKGROUND */}
       <img
-        src="/students-bg.png"
+        src="/students-bg.webp"
         alt=""
         className="absolute inset-0 w-full h-full object-cover opacity-30"
       />

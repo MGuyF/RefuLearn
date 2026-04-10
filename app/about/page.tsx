@@ -111,7 +111,7 @@ export default function AboutPage() {
                 </motion.div>
 
                 <motion.img
-                    src="/about-hero.png"
+                    src="/about-hero.webp"
                     alt="Education Illustration"
                     className="rounded-2xl shadow-lg"
                     whileHover={{ scale: 1.03, rotate: 1 }}
@@ -130,7 +130,7 @@ export default function AboutPage() {
             >
                 {/* Full-width background image */}
                 <img
-                    src="/students-bg.png"
+                    src="/students-bg.webp"
                     alt="Students background"
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                 />
@@ -193,9 +193,9 @@ export default function AboutPage() {
 
                 <div className="grid md:grid-cols-3 gap-6">
                     {[
-                        { name: "Rashid Ahmed", role: "Founder", img: "/team/1.png", socials: ["facebook", "twitter", "linkedin"] },
-                        { name: "Amina Rahman", role: "Program Manager", img: "/team/2.png", socials: ["facebook", "twitter", "linkedin"] },
-                        { name: "Fatima Noor", role: "Community Outreach", img: "/team/3.png", socials: ["facebook", "twitter", "linkedin"] },
+                        { name: "Rashid Ahmed", role: "Founder", img: "/team/1.webp", socials: ["facebook", "twitter", "linkedin"] },
+                        { name: "Amina Rahman", role: "Program Manager", img: "/team/2.webp", socials: ["facebook", "twitter", "linkedin"] },
+                        { name: "Fatima Noor", role: "Community Outreach", img: "/team/3.webp", socials: ["facebook", "twitter", "linkedin"] },
                     ].map((member, i) => (
                         <motion.div
                             key={i}

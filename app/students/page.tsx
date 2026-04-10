@@ -40,7 +40,7 @@ export default function StudentsPage() {
 
       {/* BACKGROUND (identique Donate) */}
       <img
-        src="/students-bg.png"
+        src="/students-bg.webp"
         alt="Students background"
         className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
       />
@@ -106,7 +106,7 @@ export default function StudentsPage() {
 
                 {/* IMAGE */}
                 <img
-                  src={`/students/${student.gender}-${i + 1}.png`}
+                  src={`/students/${student.gender}-${i + 1}.webp`}
                   alt={student.name}
                   className="h-56 w-full object-cover"
                 />
